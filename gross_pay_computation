@@ -1,0 +1,17 @@
+"""A program to prompt the user for hours and rate per hour using input to compute gross pay.
+Pay is normal for hours up to 40 and 1.5 times of the hourly rate for all hours worked above 40 hours."""
+
+def computepay(h, r):
+    if h > 40:
+        overtime = h - 40
+        overtime_pay = overtime * r * 1.5
+        gross_pay = overtime_pay + (40 * r)
+        return gross_pay
+    elif h <= 40:
+        gross_pay = 40 * r
+        return gross_pay
+
+hrs = float(input("Enter Hours:"))
+rate = float(input("Enter Rate:"))
+p = computepay(hrs, rate)
+print("Pay", p)
